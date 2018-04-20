@@ -7,9 +7,9 @@ from django.db import models
 class Category(models.Model):
 	Name=models.CharField(max_length=30)
 	Description=models.TextField(max_length=50)
-
-
-
+	
+        def __str__(self):
+            return self.Name 
 
 	
 class Product(models.Model):
@@ -20,3 +20,6 @@ class Product(models.Model):
 	Description=models.TextField(max_length=50)
 	Price=models.IntegerField()
 	NumbersAvailable=models.IntegerField()
+	
+	def __str__(self):
+            return self.Name

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ecom',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -125,3 +127,10 @@ STATICFILES_DIRS=(STATIC_PATH,)
 
 MEDIA_ROOT= os.path.join(BASE_DIR,"media")
 MEDIA_URL="/media/"
+
+
+ACCOUNT_ACTIVATION_DAYS = 7 
+REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_OPEN = True
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login'
